@@ -45,7 +45,7 @@ class User1Controller extends Controller
     {
         return $this->successResponse($this->user1Service->editUser1($request->all(), $id));
     }
-    
+
     public function delete($id)
     {
         return $this->successResponse($this->user1Service->deleteUser1($id));

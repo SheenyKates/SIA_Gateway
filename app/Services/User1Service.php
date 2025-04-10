@@ -10,16 +10,23 @@ class User1Service
 
     public $baseUri;
 
+    public $secret;
+
     public function __construct()
     {
         $this->baseUri = config('services.users1.base_uri');
+        $this->secret = config('services.users1.secret');
+
     }
 
     public function createUser1($data)
     {
         return $this->performRequest('POST', '/users', $data);
     }
-
+    public function obtainUsers1()
+    {
+        return $this->performRequest('GET', '/users');
+    }
     public function obtainUser1($id)
     {
         return $this->performRequest('GET', "/users/{$id}");
